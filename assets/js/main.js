@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nav_menu: "Menu",
             nav_gallery: "Gallery",
             nav_btn_reserve: "तालिका आरक्षित करें",
+            nav_reviews: "समीक्षाएं",
             
             hero_subtitle: "सात्विक एवं शुद्ध शाकाहारी विलासिता",
             hero_title: "जहाँ उत्कृष्ट स्वाद और भव्य उत्सव मिलते हैं",
@@ -223,7 +224,12 @@ document.addEventListener('DOMContentLoaded', () => {
             footer_map_btn: "गूगल मैप्स में खोलें",
             footer_copyright: "© 2026 श्री राम होटल, रेस्टोरेंट और कैफ़े। सर्वाधिकार सुरक्षित। श्रद्धापूर्वक निर्मित।",
             footer_privacy: "गोपनीयता नीति",
-            footer_terms: "नियम और शर्तें"
+            footer_terms: "नियम और शर्तें",
+            reviews_subtitle: "अतिथि समीक्षाएं",
+            reviews_title: "हमारे सम्मानित अतिथियों के विचार",
+            reviews_lead: "वाइज़र रिव्यू (WiserReview) द्वारा संचालित वास्तविक समीक्षाएं और रेटिंग, जो 100% शुद्धता और विलासिता के प्रति हमारी प्रतिबद्धता को दर्शाती हैं।",
+            reviews_btn_expand: "अधिक समीक्षाएं पढ़ें",
+            reviews_btn_collapse: "समीक्षाएं कम दिखाएं"
         },
         en: {
             head_title: "Shree Ram Hotel, Restaurant & Cafe | Premium Pure Veg Dining & Banquet Hall",
@@ -236,6 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nav_menu: "Menu",
             nav_gallery: "Gallery",
             nav_btn_reserve: "Reserve Table",
+            nav_reviews: "Reviews",
             
             hero_subtitle: "Pure Vegetarian Luxury",
             hero_title: "Where Culinary Heritage Meets Grand Celebrations",
@@ -438,7 +445,12 @@ document.addEventListener('DOMContentLoaded', () => {
             footer_map_btn: "Open in Google Maps",
             footer_copyright: "© 2026 Shree Ram Hotel, Restaurant & Cafe. All Rights Reserved. Crafted with absolute devotion.",
             footer_privacy: "Privacy Policy",
-            footer_terms: "Terms & Conditions"
+            footer_terms: "Terms & Conditions",
+            reviews_subtitle: "Guest Ratings",
+            reviews_title: "What Our Guests Say About Us",
+            reviews_lead: "Real reviews and ratings powered by WiserReview, reflecting our commitment to 100% purity and absolute luxury.",
+            reviews_btn_expand: "Read More Reviews",
+            reviews_btn_collapse: "Show Less"
         }
     };
 
@@ -1236,6 +1248,34 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Silently fail — keep showing "--°C"
                 weatherTempEl.textContent = '--°C';
             });
+    }
+
+    // ==========================================================================
+    // 6. WiserReview Expansion Toggle Mechanism
+    // ==========================================================================
+    const reviewsWrapper = document.getElementById('reviews-wrapper');
+    const expandReviewsBtn = document.getElementById('expand-reviews-btn');
+    
+    if (reviewsWrapper && expandReviewsBtn) {
+        expandReviewsBtn.addEventListener('click', () => {
+            const isExpanded = reviewsWrapper.classList.toggle('expanded');
+            
+            // Toggle text and aria-attributes
+            const activeLang = localStorage.getItem('shree_ram_lang') || 'hi';
+            if (isExpanded) {
+                expandReviewsBtn.setAttribute('data-i18n', 'reviews_btn_collapse');
+                expandReviewsBtn.innerHTML = translations[activeLang].reviews_btn_collapse;
+            } else {
+                expandReviewsBtn.setAttribute('data-i18n', 'reviews_btn_expand');
+                expandReviewsBtn.innerHTML = translations[activeLang].reviews_btn_expand;
+                
+                // Scroll smoothly back to top of reviews section when collapsing
+                const reviewsSection = document.getElementById('reviews');
+                if (reviewsSection) {
+                    reviewsSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
     }
     
 });

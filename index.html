@@ -115,6 +115,7 @@
                     <li><a href="#menu" class="nav-link" data-i18n="nav_menu">Menu</a></li>
                     <li><a href="#gallery" class="nav-link" data-i18n="nav_gallery">Gallery</a></li>
                     <li><a href="#reserve" class="nav-link" data-i18n="nav_btn_reserve">Reserve Table</a></li>
+                    <li><a href="#reviews" class="nav-link" data-i18n="nav_reviews">Reviews</a></li>
                     <li class="nav-weather-item">
                         <div class="nav-weather-pill" id="nav-weather-pill">
                             <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" class="weather-icon-svg">
@@ -937,6 +938,38 @@
                         <button class="dot" aria-label="Review page 2"></button>
                         <button class="dot" aria-label="Review page 3"></button>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dedicated Reviews & Ratings Section -->
+        <section class="reviews-section scroll-reveal" id="reviews">
+            <div class="section-container">
+                <div class="section-header text-center">
+                    <span class="section-subtitle" data-i18n="reviews_subtitle">अतिथि समीक्षाएं</span>
+                    <h2 class="section-title" data-i18n="reviews_title">हमारे सम्मानित अतिथियों के विचार</h2>
+                    <p class="section-lead" data-i18n="reviews_lead">Real reviews and ratings powered by WiserReview, reflecting our commitment to 100% purity and absolute luxury.</p>
+                </div>
+
+                <div class="wiser-widget-wrapper" id="reviews-wrapper">
+                    <!-- WiserReview Main Review Wall Widget -->
+                    <div data-id='6a12e432a53c3c55282cfd43' data-rich-snippet='true' data-type='main' class='wiser_review wsr_main' data-platform='ecomm_main'></div>
+                    <script>
+                        (function () {
+                            var scriptId = 'wiser-review-pixel'; 
+                            if (!document.getElementById(scriptId)) {
+                                var script = document.createElement('script');
+                                script.id = scriptId;
+                                script.src = "https://embed.wiserreview.com/pixel/reviewPixel.js?wsid=dgrsjmpjphnyq&t=1779624880069"; 
+                                script.defer = true; 
+                                document.body.appendChild(script);
+                            }
+                        })();
+                    </script>
+                </div>
+
+                <div class="reviews-expand-trigger-wrap text-center">
+                    <button class="btn btn-timber" id="expand-reviews-btn" data-i18n="reviews_btn_expand">अधिक समीक्षाएं पढ़ें</button>
                 </div>
             </div>
         </section>

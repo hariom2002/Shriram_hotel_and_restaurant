@@ -1667,6 +1667,80 @@ p {
     transform: scale(1.2);
 }
 
+/* 13. Reviews Section & WiserReview Widget styling */
+.reviews-section {
+    background-color: var(--color-ivory-medium);
+    border-top: 1px solid var(--color-gold-fade);
+    padding: 6rem 0;
+}
+
+.wiser-widget-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    max-height: 480px; /* "Short looking" collapsed height showing ~1.5 - 2 reviews cleanly */
+    overflow: hidden;
+    transition: max-height 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.wiser-widget-wrapper::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 140px;
+    background: linear-gradient(to top, var(--color-ivory-medium) 15%, rgba(245, 241, 230, 0) 100%);
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    z-index: 10;
+}
+
+/* Expanded state styles */
+.wiser-widget-wrapper.expanded {
+    max-height: 3500px; /* Large enough value to show the full list of reviews */
+}
+
+.wiser-widget-wrapper.expanded::after {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.reviews-expand-trigger-wrap {
+    margin-top: 2.5rem;
+    position: relative;
+    z-index: 12;
+}
+
+#expand-reviews-btn {
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    box-shadow: 0 4px 15px rgba(44, 26, 23, 0.1);
+    transition: var(--transition-smooth);
+}
+
+#expand-reviews-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(44, 26, 23, 0.18);
+}
+
+@media (max-width: 768px) {
+    .reviews-section {
+        padding: 4rem 0;
+    }
+    .wiser-widget-wrapper {
+        max-height: 440px; /* slightly shorter on mobile */
+    }
+    .wiser-widget-wrapper::after {
+        height: 100px;
+    }
+    .reviews-expand-trigger-wrap {
+        margin-top: 1.5rem;
+    }
+}
+
 /* 14. Footer Layout */
 .footer {
     background-color: #1A0F0D;
