@@ -1815,6 +1815,29 @@ p {
 }
 
 @media (max-width: 768px) {
+    /* snuggier sections on mobile */
+    .section-container {
+        padding: 3.5rem 1.25rem;
+    }
+
+    /* Sacred Chaupai Banner responsive scaling */
+    .chaupai-text {
+        font-size: 0.95rem;
+        line-height: 1.4;
+    }
+    .banner-container {
+        gap: 0.75rem;
+        padding: 0 0.5rem;
+    }
+    .mandala-icon {
+        font-size: 1rem;
+    }
+
+    /* Testimonial slider dynamic space */
+    .slider-container {
+        height: 380px;
+    }
+
     /* Header Responsive */
     .mobile-nav-toggle {
         display: flex;
@@ -1831,6 +1854,7 @@ p {
         transition: var(--transition-smooth);
         padding: 3rem 2rem;
         border-top: 1px solid rgba(197, 168, 128, 0.15);
+        overflow-y: auto;
     }
     
     .main-header.scrolled .nav-menu {
@@ -2066,7 +2090,20 @@ p {
 
 @media (max-width: 768px) {
     .lang-selector-floating {
-        top: 90px;
-        right: 1rem;
+        top: 18px;
+        right: 5.25rem;
+    }
+    .lang-selector-floating .lang-btn {
+        padding: 0.45rem 0.85rem;
+        font-size: 0.8rem;
+        box-shadow: none;
+        background-color: rgba(252, 251, 247, 0.15);
+        border-color: rgba(197, 168, 128, 0.3);
+        color: var(--color-timber-dark);
+    }
+    .main-header.scrolled + .lang-selector-floating .lang-btn {
+        background-color: rgba(252, 251, 247, 0.1);
+        border-color: rgba(252, 251, 247, 0.2);
+        color: var(--color-ivory-light);
     }
 }
