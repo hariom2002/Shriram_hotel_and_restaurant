@@ -15,9 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
             skip_link: "मुख्य सामग्री पर जाएं",
             brand_sub: "Hotel & Restaurant",
             nav_home: "Home",
-            nav_heritage: "Our Heritage",
-            nav_restaurant: "Restaurant",
-            nav_cafe: "Cafe",
+            nav_services: "Our Services",
+            nav_restaurant: "Restaurant & Cafe",
             nav_banquet: "Banquet Hall",
             nav_menu: "Menu",
             nav_gallery: "Gallery",
@@ -28,25 +27,33 @@ document.addEventListener('DOMContentLoaded', () => {
             hero_desc: "हमारे सात्विक शाकाहारी व्यंजनों का आनंद लें, लकड़ी की नक्काशीदार कैफ़े में विश्राम करें, और हमारे आलीशान उत्सव भवन में भव्य और अविस्मरणीय आयोजन मनाएं।",
             hero_btn_menu: "सूची देखें",
             hero_btn_venue: "भवन आरक्षित करें",
-            hero_card_banquet_title: "इंपीरियल पैलेस",
-            hero_card_banquet_caption: "भव्य आयोजन, जीवनभर की यादें",
-            hero_card_lobby_title: "आधुनिक विलासिता",
-            hero_card_lobby_caption: "हाथीदांत और नक्काशीदार लकड़ी का संगम",
+            hero_slide1_title: "भव्य स्वागत कक्ष",
+            hero_slide1_desc: "अखरोट की लकड़ी की नक्काशी और आधुनिक मार्बल का संगम",
+            hero_slide2_title: "शानदार प्रवेश लॉबी",
+            hero_slide2_desc: "हाथीदांत की दीवारें और आरामदायक लकड़ी के बैठक सोफे",
+            hero_slide3_title: "प्रकाशमय कांच गैलरी",
+            hero_slide3_desc: "चमकदार संगमरमर फर्श और शांत-विलासिता वाली खिड़कियां",
+            hero_slide4_title: "श्री राम सेल्फी पॉइंट",
+            hero_slide4_desc: "सुंदर पलों को यादगार बनाने के लिए चमकता हुआ सेल्फी स्पॉट",
             
-            about_subtitle: "हमारी गौरवशाली विरासत",
-            about_title: "शुद्ध स्वाद और पावन आतिथ्य का एक सुंदर संगम",
-            about_desc: "भारतीय पाक परंपराओं के प्रति गहरे सम्मान से जन्मे, श्री राम एक ऐसा पावन स्थान है जहाँ भोजन को प्रसाद माना जाता है। हमारी इमारतों में उपयोग की गई अखरोट की लकड़ी की नक्काशी और हाथीदांत की सफेदी (Ivory) आपको शांति और आतिथ्य का एहसास कराती हैं।",
-            about_badge_num: "100%",
-            about_badge_txt: "शुद्ध शाकाहारी",
-            about_pillar1_title: "प्राकृतिक सामग्रियां",
-            about_pillar1_desc: "स्थानीय खेतों से ताजी सामग्रियां, शुद्ध घी और हाथ से पिसे हुए जैविक मसाले।",
-            about_pillar2_title: "उत्कृष्ट स्वच्छता",
-            about_pillar2_desc: "वैदिक नियमों के अनुसार भोजन बनाने वाली हमारी अत्यंत स्वच्छ रसोई।",
+            services_subtitle: "हमारी सेवाएँ",
+            services_title: "उत्कृष्ट आतिथ्य सत्कार और भव्य आयोजन",
+            services_lead: "लक्जरी होटल कमरों से लेकर सपनों जैसी शादियों, बेहतरीन भोजन और निजी पारिवारिक मील के पत्थरों तक, हम हर पल को एक भव्य स्मृति में बदल देते हैं।",
+            service1_title: "होटल और कमरे",
+            service1_desc: "गर्म लकड़ी और हाथीदांत की सफेदी में लिपटी आधुनिक विलासिता और आराम का अनुभव करें। संगमरमर के सुंदर लॉबी, प्रीमियम सुविधाएं और समर्पित रूम सर्विस इसकी विशेषता हैं।",
+            service2_title: "रेस्टोरेंट और कैफ़े",
+            service2_desc: "100% शुद्ध शाकाहारी वैदिक व्यंजनों का आनंद लें, जो अत्याधुनिक लाइव रसोई में बनाए जाते हैं, साथ ही हमारे बुटीक कॉफी रोस्टर्स और आरामदायक लाउंज भी यहाँ उपलब्ध हैं।",
+            service3_title: "विवाह और स्वागत समारोह",
+            service3_desc: "हमारे राजसी सुनहरी छत वाले विवाह भवन (क्षमता 800 मेहमानों तक) में भव्य शाही शादियों का आयोजन करें, जो शाही मंचों और बेजोड़ कैटरिंग से सुसज्जित है।",
+            service4_title: "जन्मदिन और वर्षगाँठ",
+            service4_desc: "अनुकूलित केक टेबल, रंगीन थीम सजावट, उन्नत ध्वनि प्रणाली और एक उत्साही मेजबान टीम के साथ जीवन के अनमोल मील के पत्थरों को मनाएं।",
+            service5_title: "निजी कार्यक्रम",
+            service5_desc: "कॉर्पोरेट सम्मेलनों, कार्यकारी रात्रिभोजों या निजी पारिवारिक दावतों के लिए विशेष रूप से डिज़ाइन किए गए बैठक लाउंज, निजी भोजन कक्ष और लक्जरी बुफे प्रणालियां।",
             
             restaurant_subtitle: "उत्कृष्ट भोजन का पावन स्थल",
-            restaurant_title: "भव्य भोजन कक्ष",
+            restaurant_title: "भव्य रेस्टोरेंट और कैफ़े",
             restaurant_lead: "अखरोट की लकड़ी की नक्काशी, सुनहरे विवरण और मोमबत्तियों की हल्की रोशनी से सजे हाथीदांत (Ivory) रंग के बूथों में बैठें।",
-            restaurant_tag: "वैदिक मानक",
+            restaurant_tag: "परम पावन वैदिक शुद्धता",
             restaurant_spotlight_title: "हमारी खुली रसोई: आधुनिक और अति-स्वच्छ",
             restaurant_spotlight_desc: "हमारी रसोई केवल भोजन बनाने का स्थान नहीं है; यह हमारा गौरव है। जैसा कि आप हमारे लाइव कैमरे में देख सकते हैं, हम उच्चतम स्तर के स्टेनलेस स्टील वर्कस्टेशन, उन्नत वेंटिलेशन और निरंतर स्वच्छता दिनचर्या का उपयोग करते हैं। प्रत्येक रसोइया पावन नियमों का पालन करता है ताकि आपका भोजन स्वच्छ, शुद्ध और स्वास्थ्यवर्धक रहे।",
             restaurant_list1: "लगातार कीटाणुशोधन और गहरी भाप से सफाई",
@@ -54,18 +61,14 @@ document.addEventListener('DOMContentLoaded', () => {
             restaurant_list3: "एलर्जी वाले खाद्य पदार्थों के लिए अलग से संचालन व्यवस्था",
             restaurant_btn: "व्यंजनों की सूची देखें",
             restaurant_live_badge: "सजीव रसोई का दृश्य",
-            
-            cafe_subtitle: "लकड़ी की आरामदायक नक्काशीदार जगह",
-            cafe_title: "उत्कृष्ट कैफ़े और लाउंज",
-            cafe_desc: "हमारे अखरोट की लकड़ी से बने शांत कैफ़े लाउंज में आएं जहाँ समय धीमा हो जाता है। लटकती हरी-भरी लताओं और आधुनिक लकड़ी के फर्नीचर से सजी यह जगह गहरी बातचीत, शांति से पढ़ने या काम के लिए उत्तम है।",
-            cafe_overlay_title: "द लाउंज",
-            cafe_overlay_subtitle: "अरोमा कॉफी और मीठे व्यंजन",
-            cafe_feat1_title: "उत्कृष्ट कॉफी",
-            cafe_feat1_desc: "अनुभवी बरिस्ता द्वारा तैयार की गई ताज़ी कॉफ़ी बीन्स की मनमोहक सुगंध।",
-            cafe_feat2_title: "प्रीमियम शेक्स और मॉकटेल्स",
-            cafe_feat2_desc: "विशेष रूप से तैयार जड़ी-बूटियों और फूलों के ताज़गी देने वाले मॉकटेल्स।",
-            cafe_feat3_title: "घर में बनी ताज़ा पेस्ट्री",
-            cafe_feat3_desc: "ताज़े बने क्रोइसैन्ट, अंडे रहित स्वादिष्ट केक और बेकहाउस व्यंजन।",
+            restaurant_slide1_title: "भव्य पारिवारिक भोज",
+            restaurant_slide1_desc: "हाथीदांत के आरामदायक केबिन में उत्कृष्ट आतिथ्य सत्कार",
+            restaurant_slide2_title: "सजीव भोजन कक्ष",
+            restaurant_slide2_desc: "अखरोट की नक्काशीदार दीवारों के बीच सजीव सेवा",
+            restaurant_slide3_title: "पारिवारिक समारोह",
+            restaurant_slide3_desc: "पीढ़ियों से चला आ रहा आतिथ्य और शुद्ध पारंपरिक स्वाद",
+            restaurant_slide4_title: "स्वच्छ खुली रसोई",
+            restaurant_slide4_desc: "अत्याधुनिक खुली रसोई जहाँ वैदिक स्वच्छता को प्राथमिकता दी जाती है",
             
             banquet_subtitle: "शाही आयोजन",
             banquet_title: "भव्य उत्सव एवं मैरिज पैलेस",
@@ -188,7 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
             test1_text: "भोजन कक्ष की इमारतों में की गई अखरोट की लकड़ी की नक्काशी इसे बेहद प्रीमियम बनाती है। लेकिन यहाँ का मुख्य आकर्षण भोजन है! इनका शाही पनीर स्वादों की एक उत्कृष्ट कृति है। हर एक निवाले में सच्ची सात्विक शुद्धता का अनुभव होता है!",
             test1_name: "मीरा सिंघानिया",
             test1_desg: "खाद्य समीक्षक (Food Critic)",
-            test2_text: "हमने अपनी बेटी की शादी का रिसेप्शन श्री राम के उत्सव भवन में आयोजित किया था। मंच की भव्यता और फूलों की सजावट बिल्कुल वैसी ही थी जैसी तस्वीरों में दिखाई गई थी। कैटरिंग टीम ने 500 मेहमानों को असाधारण आतिथ्य सत्कार के साथ सात्विक भोजन परोसा।",
+            test2_text: "हमने अपनी बेटी की शादी का रिसेप्शन श्री राम के उत्सव भवन में आयोजित किया था। मंच की भव्यता और फूलों की सजावट बिल्कुल वैसी ही थी जैसी तस्वीरों में दिखाई गई थी। कैटरिंग टीम ने 500 मेहमानों को असाधारण आतिथ्य सत्कार के साथ सात्विक भोजन परोसे।",
             test2_name: "राजेश कुमार वर्मा",
             test2_desg: "व्यवसायी एवं संतुष्ट पिता",
             test3_text: "मैं रिमोट से काम करता हूँ, और यहाँ का लकड़ी का आरामदायक कैफ़े लाउंज मेरा पसंदीदा कोना है। यहाँ का आइवरी क्रीम कोर्टाडो बेहतरीन बनावट वाला होता है, और अखरोट ब्राउनी लाजवाब है। यहाँ का शांत और आलीशान माहौल शहर में मिलना मुश्किल है।",
@@ -218,9 +221,8 @@ document.addEventListener('DOMContentLoaded', () => {
             skip_link: "Skip to main content",
             brand_sub: "Hotel & Restaurant",
             nav_home: "Home",
-            nav_heritage: "Our Heritage",
-            nav_restaurant: "Restaurant",
-            nav_cafe: "Cafe",
+            nav_services: "Our Services",
+            nav_restaurant: "Restaurant & Cafe",
             nav_banquet: "Banquet Hall",
             nav_menu: "Menu",
             nav_gallery: "Gallery",
@@ -231,25 +233,33 @@ document.addEventListener('DOMContentLoaded', () => {
             hero_desc: "Indulge in our organic pure-veg gourmet dishes, relax in our cozy timber-styled cafe, and host majestic memorable events in our luxury banquet halls.",
             hero_btn_menu: "Explore Menu",
             hero_btn_venue: "Book Venue",
-            hero_card_banquet_title: "The Imperial Hall",
-            hero_card_banquet_caption: "Grand events, lifetime memories",
-            hero_card_lobby_title: "Modern Luxury",
-            hero_card_lobby_caption: "Pristine timber & glass interiors",
+            hero_slide1_title: "Grand Reception Lobby",
+            hero_slide1_desc: "Sleek walnut carving and premium marble details",
+            hero_slide2_title: "Pristine Lobby Lounge",
+            hero_slide2_desc: "Ivory walls and bespoke timber seating booths",
+            hero_slide3_title: "Luminous Glass Lounge",
+            hero_slide3_desc: "Glistening marble tiles and quiet-luxury window niches",
+            hero_slide4_title: "The Heart Selfie Spot",
+            hero_slide4_desc: "Boutique neon accents to capture your memorable moments",
             
-            about_subtitle: "Our Noble Heritage",
-            about_title: "A Symphony of Pure Taste & Pristine Hospitality",
-            about_desc: "Born from a deep respect for rich Indian culinary traditions, Shree Ram represents a sanctuary where food is considered a pure offering. Every element of our warm timber wood architecture and soft ivory textures is crafted to instill peace, warmth, and luxury.",
-            about_badge_num: "100%",
-            about_badge_txt: "Pure Veg Purity",
-            about_pillar1_title: "Pure Ingredients",
-            about_pillar1_desc: "Locally sourced fresh farm produce, pure ghee, and organic hand-ground spices.",
-            about_pillar2_title: "Pristine Cleanliness",
-            about_pillar2_desc: "Ultra-hygienic commercial kitchens upholding Vedic food preparation regulations.",
+            services_subtitle: "Our Services",
+            services_title: "Exquisite Hospitality Tailored to Your Celebrations",
+            services_lead: "From luxury stays to fairytale weddings, gourmet dining, and private family milestone celebrations, we turn every moment into a grand memory.",
+            service1_title: "Hotel & Rooms",
+            service1_desc: "Experience modern luxury and comfort styled in warm timber and ivory white. Features glistening marble lobbies, premium amenities, and dedicated room service.",
+            service2_title: "Restaurant & Cafe",
+            service2_desc: "Indulge in 100% pure vegetarian Vedic delicacies, slow-cooked in state-of-the-art live kitchens, alongside our boutique coffee roasters and cozy lounges.",
+            service3_title: "Weddings & Receptions",
+            service3_desc: "Host grand imperial weddings in our majestic golden-ceilinged banquet halls (capacity up to 800 guests), decorated with royal stages and stellar catering.",
+            service4_title: "Birthdays & Anniversaries",
+            service4_desc: "Celebrate life's precious milestones with customized cake tables, colorful theme decorations, advanced acoustic sound, and an enthusiastic hosting crew.",
+            service5_title: "Private Gatherings",
+            service5_desc: "Tailored meeting lounges, private dining rooms, and executive buffet systems designed for corporate meets, executive dinners, or private family feasts.",
             
             restaurant_subtitle: "Fine Dining Sanctuary",
-            restaurant_title: "The Grand Dining Hall",
+            restaurant_title: "The Grand Restaurant & Cafe",
             restaurant_lead: "Immerse yourself in fine gourmet dining designed with rich timber, golden details, and soft candlelit ivory booths.",
-            restaurant_tag: "Vedic Standards",
+            restaurant_tag: "Sacred Vedic Purity",
             restaurant_spotlight_title: "Our Open Sanctum: State-of-the-Art Clean Kitchen",
             restaurant_spotlight_desc: "Our kitchen isn't just a place to prepare food; it is our pride. As captured in our live view, we employ premium culinary grade stainless steel workstations, strict ventilation, and comprehensive sterilization routines. Every chef follows sacred hygiene practices, ensuring every meal is clean, pure, and absolutely healthy.",
             restaurant_list1: "Continuous disinfection and deep steam cleaning",
@@ -257,18 +267,14 @@ document.addEventListener('DOMContentLoaded', () => {
             restaurant_list3: "Professional separate handling lines for allergies",
             restaurant_btn: "Browse Dining Menu",
             restaurant_live_badge: "Authentic Live Kitchen Snapshot",
-            
-            cafe_subtitle: "Cozy Timber Spaces",
-            cafe_title: "The Boutique Cafe & Lounge",
-            cafe_desc: "Retreat to our warm walnut-clad cafe lounge, where time slows down. Adorned with hanging creepers and mid-century timber furniture, it is the perfect spot for deep conversations, quiet reading, or work sessions powered by artisanal beverage crafts.",
-            cafe_overlay_title: "The Lounge",
-            cafe_overlay_subtitle: "Slow Drips & Sweet Bites",
-            cafe_feat1_title: "Artisanal Coffee & Drips",
-            cafe_feat1_desc: "Fresh single-origin beans roasted and brewed by expert baristas using premium espresso systems.",
-            cafe_feat2_title: "Premium Shakes & Mocktails",
-            cafe_feat2_desc: "Sip on custom herbal, fruity, and botanical mocktail profiles that soothe and refresh.",
-            cafe_feat3_title: "Fresh In-House Pastries",
-            cafe_feat3_desc: "Bakehouse delicacies: warm croissants, melt-in-mouth eggless cakes, and delicious tarts.",
+            restaurant_slide1_title: "Elegant Fine Dining",
+            restaurant_slide1_desc: "Exquisite culinary presentations served in dynamic, warm ivory spaces",
+            restaurant_slide2_title: "Bustling Dining Hall",
+            restaurant_slide2_desc: "Vibrant energy and warm hospitality in our grand walnut-clad dining room",
+            restaurant_slide3_title: "Traditional Gatherings",
+            restaurant_slide3_desc: "Celebrating multi-generational family milestones with pure, authentic tastes",
+            restaurant_slide4_title: "The Sanctum Kitchen",
+            restaurant_slide4_desc: "State-of-the-art open kitchen prioritizing Vedic hygiene & steam sterilization",
             
             banquet_subtitle: "Imperial Celebrations",
             banquet_title: "The Royal Banquet & Event Hall",
@@ -981,6 +987,137 @@ document.addEventListener('DOMContentLoaded', () => {
     const sliderWrapper = document.querySelector('.slider-wrapper');
     sliderWrapper.addEventListener('mouseenter', () => clearInterval(slideInterval));
     sliderWrapper.addEventListener('mouseleave', startSlideShow);
+
+    // ==========================================================================
+    // 8. Hero Slideshow Interactivity (Premium Ken Burns Zoom & Autoplay)
+    // ==========================================================================
+    const heroSlides = document.querySelectorAll('.hero-slide');
+    const heroIndicators = document.querySelectorAll('.hero-slideshow-wrapper .indicator');
+    const heroPrevBtn = document.getElementById('hero-slide-prev');
+    const heroNextBtn = document.getElementById('hero-slide-next');
+    const heroSlideshowWrapper = document.querySelector('.hero-slideshow-wrapper');
+    let activeHeroSlide = 0;
+    let heroSlideTimer;
+
+    const showHeroSlide = (index) => {
+        heroSlides.forEach(slide => slide.classList.remove('active'));
+        heroIndicators.forEach(ind => ind.classList.remove('active'));
+
+        heroSlides[index].classList.add('active');
+        heroIndicators[index].classList.add('active');
+        activeHeroSlide = index;
+    };
+
+    const nextHeroSlide = () => {
+        const nextIndex = (activeHeroSlide + 1) % heroSlides.length;
+        showHeroSlide(nextIndex);
+    };
+
+    const prevHeroSlide = () => {
+        const prevIndex = (activeHeroSlide - 1 + heroSlides.length) % heroSlides.length;
+        showHeroSlide(prevIndex);
+    };
+
+    const startHeroSlideshow = () => {
+        clearInterval(heroSlideTimer);
+        heroSlideTimer = setInterval(nextHeroSlide, 5000); // 5 seconds autoplay cycle
+    };
+
+    // Controller Clicks
+    if (heroPrevBtn && heroNextBtn) {
+        heroPrevBtn.addEventListener('click', () => {
+            prevHeroSlide();
+            startHeroSlideshow();
+        });
+        heroNextBtn.addEventListener('click', () => {
+            nextHeroSlide();
+            startHeroSlideshow();
+        });
+    }
+
+    // Indicator Clicks
+    heroIndicators.forEach((indicator, idx) => {
+        indicator.addEventListener('click', () => {
+            showHeroSlide(idx);
+            startHeroSlideshow();
+        });
+    });
+
+    // Initialize & Hover Pauses
+    if (heroSlides.length > 0) {
+        startHeroSlideshow();
+        if (heroSlideshowWrapper) {
+            heroSlideshowWrapper.addEventListener('mouseenter', () => clearInterval(heroSlideTimer));
+            heroSlideshowWrapper.addEventListener('mouseleave', startHeroSlideshow);
+        }
+    }
+
+    // ==========================================================================
+    // 9. Restaurant Slideshow Interactivity (Premium Ken Burns Zoom & Autoplay)
+    // ==========================================================================
+    const restaurantSlides = document.querySelectorAll('.restaurant-slide');
+    const restaurantIndicators = document.querySelectorAll('.restaurant-indicators .indicator');
+    const restaurantPrevBtn = document.getElementById('restaurant-slide-prev');
+    const restaurantNextBtn = document.getElementById('restaurant-slide-next');
+    const restaurantSlideshowWrapper = document.querySelector('.restaurant-slideshow-wrapper');
+    let activeRestaurantSlide = 0;
+    let restaurantSlideTimer;
+
+    const showRestaurantSlide = (index) => {
+        restaurantSlides.forEach(slide => slide.classList.remove('active'));
+        restaurantIndicators.forEach(ind => ind.classList.remove('active'));
+
+        restaurantSlides[index].classList.add('active');
+        restaurantIndicators[index].classList.add('active');
+        activeRestaurantSlide = index;
+    };
+
+    const nextRestaurantSlide = () => {
+        if (restaurantSlides.length === 0) return;
+        const nextIndex = (activeRestaurantSlide + 1) % restaurantSlides.length;
+        showRestaurantSlide(nextIndex);
+    };
+
+    const prevRestaurantSlide = () => {
+        if (restaurantSlides.length === 0) return;
+        const prevIndex = (activeRestaurantSlide - 1 + restaurantSlides.length) % restaurantSlides.length;
+        showRestaurantSlide(prevIndex);
+    };
+
+    const startRestaurantSlideshow = () => {
+        clearInterval(restaurantSlideTimer);
+        restaurantSlideTimer = setInterval(nextRestaurantSlide, 5000); // 5 seconds autoplay cycle
+    };
+
+    // Controller Clicks
+    if (restaurantPrevBtn && restaurantNextBtn) {
+        restaurantPrevBtn.addEventListener('click', () => {
+            prevRestaurantSlide();
+            startRestaurantSlideshow();
+        });
+        restaurantNextBtn.addEventListener('click', () => {
+            nextRestaurantSlide();
+            startRestaurantSlideshow();
+        });
+    }
+
+    // Indicator Clicks
+    restaurantIndicators.forEach((indicator) => {
+        indicator.addEventListener('click', () => {
+            const idx = parseInt(indicator.getAttribute('data-index'), 10);
+            showRestaurantSlide(idx);
+            startRestaurantSlideshow();
+        });
+    });
+
+    // Initialize & Hover Pauses
+    if (restaurantSlides.length > 0) {
+        startRestaurantSlideshow();
+        if (restaurantSlideshowWrapper) {
+            restaurantSlideshowWrapper.addEventListener('mouseenter', () => clearInterval(restaurantSlideTimer));
+            restaurantSlideshowWrapper.addEventListener('mouseleave', startRestaurantSlideshow);
+        }
+    }
     
     // Check localStorage cache or default to Hindi (hi)
     const cachedLang = localStorage.getItem('shree_ram_lang') || 'hi';
@@ -989,6 +1126,71 @@ document.addEventListener('DOMContentLoaded', () => {
         initialActiveOption.click();
     } else {
         updatePageLanguage('hi');
+    }
+
+    // ==========================================================================
+    // 10. Back to Top Button Controller
+    // ==========================================================================
+    const backToTopBtn = document.getElementById('back-to-top');
+    if (backToTopBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        }, { passive: true });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+    // ==========================================================================
+    // 11. Live Weather Temperature — Ganj Basoda (Open-Meteo API, free, no key)
+    // ==========================================================================
+    const weatherTempEl = document.getElementById('weather-temp');
+    const weatherIconSvg = document.querySelector('.weather-icon-svg');
+
+    if (weatherTempEl) {
+        // Ganj Basoda coordinates: 23.85°N, 77.93°E
+        const weatherUrl = 'https://api.open-meteo.com/v1/forecast?latitude=23.85&longitude=77.93&current=temperature_2m,weather_code&timezone=Asia%2FKolkata';
+
+        // WMO Weather Code to SVG icon mapping
+        function getWeatherIcon(code) {
+            // Clear sky
+            if (code === 0) return `<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>`;
+            // Partly cloudy
+            if (code >= 1 && code <= 3) return `<path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9z"/>`;
+            // Fog
+            if (code >= 45 && code <= 48) return `<path d="M5 5h14M3 10h18M5 15h14M7 20h10"/>`;
+            // Rain / drizzle
+            if ((code >= 51 && code <= 67) || (code >= 80 && code <= 82)) return `<path d="M20 17.58A5 5 0 0 0 18 8h-1.26A8 8 0 1 0 4 16.25"/><line x1="8" y1="16" x2="8" y2="20"/><line x1="12" y1="16" x2="12" y2="20"/><line x1="16" y1="16" x2="16" y2="20"/>`;
+            // Snow
+            if ((code >= 71 && code <= 77) || (code >= 85 && code <= 86)) return `<path d="M20 17.58A5 5 0 0 0 18 8h-1.26A8 8 0 1 0 4 16.25"/><line x1="8" y1="16" x2="8.01" y2="16"/><line x1="12" y1="16" x2="12.01" y2="16"/><line x1="16" y1="16" x2="16.01" y2="16"/>`;
+            // Thunderstorm
+            if (code >= 95) return `<path d="M19 16.9A5 5 0 0 0 18 7h-1.26a8 8 0 1 0-11.62 9"/><polyline points="13 11 9 17 15 17 11 23"/>`;
+            // Default: sun
+            return `<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>`;
+        }
+
+        fetch(weatherUrl)
+            .then(res => res.json())
+            .then(data => {
+                if (data && data.current) {
+                    const temp = Math.round(data.current.temperature_2m);
+                    weatherTempEl.textContent = `${temp}°C`;
+
+                    // Update icon based on weather condition
+                    if (weatherIconSvg && data.current.weather_code !== undefined) {
+                        weatherIconSvg.innerHTML = getWeatherIcon(data.current.weather_code);
+                    }
+                }
+            })
+            .catch(() => {
+                // Silently fail — keep showing "--°C"
+                weatherTempEl.textContent = '--°C';
+            });
     }
     
 });

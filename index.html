@@ -24,6 +24,10 @@
 
     <title data-i18n="head_title">श्री राम होटल, रेस्टोरेंट और कैफ़े | प्रीमियम शुद्ध शाकाहारी भोजन और उत्सव भवन</title>
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="assets/images/logo.jpg">
+    <link rel="apple-touch-icon" href="assets/images/logo.jpg">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -105,17 +109,25 @@
             <nav class="nav-menu" id="nav-menu" aria-label="Main Navigation">
                 <ul class="nav-list">
                     <li><a href="#" class="nav-link active" data-i18n="nav_home">Home</a></li>
-                    <li><a href="#about" class="nav-link" data-i18n="nav_heritage">Our Heritage</a></li>
-                    <li><a href="#restaurant" class="nav-link" data-i18n="nav_restaurant">Restaurant</a></li>
-                    <li><a href="#cafe" class="nav-link" data-i18n="nav_cafe">Cafe</a></li>
+                    <li><a href="#services" class="nav-link" data-i18n="nav_services">Our Services</a></li>
+                    <li><a href="#restaurant" class="nav-link" data-i18n="nav_restaurant">Restaurant & Cafe</a></li>
                     <li><a href="#banquet" class="nav-link" data-i18n="nav_banquet">Banquet Hall</a></li>
                     <li><a href="#menu" class="nav-link" data-i18n="nav_menu">Menu</a></li>
                     <li><a href="#gallery" class="nav-link" data-i18n="nav_gallery">Gallery</a></li>
+                    <li><a href="#reserve" class="nav-link" data-i18n="nav_btn_reserve">Reserve Table</a></li>
+                    <li class="nav-weather-item">
+                        <div class="nav-weather-pill" id="nav-weather-pill">
+                            <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none" class="weather-icon-svg">
+                                <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                            </svg>
+                            <span class="weather-temp" id="weather-temp">--°C</span>
+                            <span class="weather-city">Ganj Basoda</span>
+                        </div>
+                    </li>
                 </ul>
             </nav>
 
             <div class="header-actions">
-                <a href="#reserve" class="btn btn-primary btn-nav" data-i18n="nav_btn_reserve">तालिका आरक्षित करें</a>
                 <button class="mobile-nav-toggle" id="mobile-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
                     <span class="hamburger-bar"></span>
                     <span class="hamburger-bar"></span>
@@ -163,74 +175,126 @@
                     </div>
                 </div>
                 
-                <div class="hero-asymmetrical-cards">
-                    <div class="hero-card main-card">
-                        <img src="assets/images/banquet.jpg" alt="Majestic Banquet Stage Design">
-                        <div class="card-caption">
-                            <h4 data-i18n="hero_card_banquet_title">इंपीरियल पैलेस</h4>
-                            <p data-i18n="hero_card_banquet_caption">भव्य आयोजन, जीवनभर की यादें</p>
+                <!-- Interactive Premium Slideshow -->
+                <div class="hero-slideshow-wrapper">
+                    <div class="hero-slideshow" id="hero-slideshow">
+                        <!-- Slide 1 -->
+                        <div class="hero-slide active">
+                            <img src="assets/images/hero_slide1.jpg" alt="Premium Walnut check-in reception counter">
+                            <div class="slide-caption">
+                                <h4 data-i18n="hero_slide1_title">भव्य स्वागत कक्ष</h4>
+                                <p data-i18n="hero_slide1_desc">अखरोट की लकड़ी की नक्काशी और आधुनिक मार्बल का संगम</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 2 -->
+                        <div class="hero-slide">
+                            <img src="assets/images/hero_slide2.jpg" alt="Pristine interior dining waiting lobby lounge glass partition">
+                            <div class="slide-caption">
+                                <h4 data-i18n="hero_slide2_title">शानदार प्रवेश लॉबी</h4>
+                                <p data-i18n="hero_slide2_desc">हाथीदांत की दीवारें और आरामदायक लकड़ी के बैठक सोफे</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 3 -->
+                        <div class="hero-slide">
+                            <img src="assets/images/hero_slide3.jpg" alt="Glistening marble glass windows and lobby seating details">
+                            <div class="slide-caption">
+                                <h4 data-i18n="hero_slide3_title">प्रकाशमय कांच गैलरी</h4>
+                                <p data-i18n="hero_slide3_desc">चमकदार संगमरमर फर्श और शांत-विलासिता वाली खिड़कियां</p>
+                            </div>
+                        </div>
+
+                        <!-- Slide 4 -->
+                        <div class="hero-slide">
+                            <img src="assets/images/hero_slide4.jpg" alt="Premium heart-shaped neon selfie spot in Shri Ram Restaurant">
+                            <div class="slide-caption">
+                                <h4 data-i18n="hero_slide4_title">श्री राम सेल्फी पॉइंट</h4>
+                                <p data-i18n="hero_slide4_desc">सुंदर पलों को यादगार बनाने के लिए चमकता हुआ सेल्फी स्पॉट</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="hero-card sub-card">
-                        <img src="assets/images/int_lobby.jpg" alt="Premium check-in reception counter and glass waiting lobby lounge">
-                        <div class="card-caption">
-                            <h4 data-i18n="hero_card_lobby_title">आधुनिक विलासिता</h4>
-                            <p data-i18n="hero_card_lobby_caption">हाथीदांत और नक्काशीदार लकड़ी का संगम</p>
-                        </div>
+
+                    <!-- Slideshow Navigation Controls -->
+                    <button class="slideshow-ctrl prev" id="hero-slide-prev" aria-label="Previous Slide">&#10094;</button>
+                    <button class="slideshow-ctrl next" id="hero-slide-next" aria-label="Next Slide">&#10095;</button>
+
+                    <!-- Slideshow Pagination Indicators -->
+                    <div class="slideshow-indicators" id="hero-slide-indicators">
+                        <span class="indicator active" data-index="0"></span>
+                        <span class="indicator" data-index="1"></span>
+                        <span class="indicator" data-index="2"></span>
+                        <span class="indicator" data-index="3"></span>
                     </div>
                 </div>
             </div>
             
             <div class="scroll-indicator" aria-hidden="true">
-                <a href="#about" class="scroll-arrow">
+                <a href="#services" class="scroll-arrow">
                     <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
                 </a>
             </div>
         </section>
 
-        <!-- Our Heritage (About Section) -->
-        <section class="about-section scroll-reveal" id="about">
-            <div class="section-container grid-two">
-                <div class="about-media">
-                    <div class="about-image-wrapper">
-                        <img src="assets/images/logo.jpg" alt="Shree Ram Mandala Heritage Logo" class="about-img-main">
-                        <div class="about-badge">
-                            <span class="badge-number" data-i18n="about_badge_num">100%</span>
-                            <span class="badge-text" data-i18n="about_badge_txt">शुद्ध शाकाहारी</span>
-                        </div>
-                    </div>
+        <!-- Our Services Section -->
+        <section class="services-section scroll-reveal" id="services">
+            <div class="section-container">
+                <div class="section-header text-center">
+                    <span class="section-subtitle" data-i18n="services_subtitle">Our Services</span>
+                    <h2 class="section-title" data-i18n="services_title">Exquisite Hospitality Tailored to Your Celebrations</h2>
+                    <p class="section-lead" data-i18n="services_lead">From luxury stays to fairytale weddings, gourmet dining, and private family milestone celebrations, we turn every moment into a grand memory.</p>
                 </div>
                 
-                <div class="about-info">
-                    <span class="section-subtitle" data-i18n="about_subtitle">हमारी गौरवशाली विरासत</span>
-                    <h2 class="section-title" data-i18n="about_title">शुद्ध स्वाद और पावन आतिथ्य का एक सुंदर संगम</h2>
-                    <p class="section-desc" data-i18n="about_desc">भारतीय पाक परंपराओं के प्रति गहरे सम्मान से जन्मे, श्री राम एक ऐसा पावन स्थान है जहाँ भोजन को प्रसाद माना जाता है। हमारी इमारतों में उपयोग की गई अखरोट की लकड़ी की नक्काशी और हाथीदांत की सफेदी (Ivory) आपको शांति और आतिथ्य का एहसास कराती हैं।</p>
-                    
-                    <div class="heritage-pillars">
-                        <div class="pillar">
-                            <div class="pillar-icon">
-                                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                            </div>
-                            <div class="pillar-text">
-                                <h3 data-i18n="about_pillar1_title">प्राकृतिक सामग्रियां</h3>
-                                <p data-i18n="about_pillar1_desc">स्थानीय खेतों से ताजी सामग्रियां, शुद्ध घी और हाथ से पिसे हुए जैविक मसाले।</p>
-                            </div>
+                <div class="services-grid">
+                    <!-- Service 1: Hotel & Rooms -->
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
                         </div>
-                        <div class="pillar">
-                            <div class="pillar-icon">
-                                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg>
-                            </div>
-                            <div class="pillar-text">
-                                <h3 data-i18n="about_pillar2_title">उत्कृष्ट स्वच्छता</h3>
-                                <p data-i18n="about_pillar2_desc">वैदिक नियमों के अनुसार भोजन बनाने वाली हमारी अत्यंत स्वच्छ रसोई।</p>
-                            </div>
+                        <h3 data-i18n="service1_title">Hotel & Rooms</h3>
+                        <p data-i18n="service1_desc">Experience modern luxury and comfort styled in warm timber and ivory white. Features glistening marble lobbies, premium amenities, and dedicated room service.</p>
+                    </div>
+
+                    <!-- Service 2: Restaurant & Cafe -->
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none"><path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
                         </div>
+                        <h3 data-i18n="service2_title">Restaurant & Cafe</h3>
+                        <p data-i18n="service2_desc">Indulge in 100% pure vegetarian Vedic delicacies, slow-cooked in state-of-the-art live kitchens, alongside our boutique coffee roasters and cozy lounges.</p>
+                    </div>
+
+                    <!-- Service 3: Weddings & Receptions -->
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/></svg>
+                        </div>
+                        <h3 data-i18n="service3_title">Weddings & Receptions</h3>
+                        <p data-i18n="service3_desc">Host grand imperial weddings in our majestic golden-ceilinged banquet halls (capacity up to 800 guests), decorated with royal stages and stellar catering.</p>
+                    </div>
+
+                    <!-- Service 4: Birthdays & Anniversaries -->
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"/></svg>
+                        </div>
+                        <h3 data-i18n="service4_title">Birthdays & Anniversaries</h3>
+                        <p data-i18n="service4_desc">Celebrate life's precious milestones with customized cake tables, colorful theme decorations, advanced acoustic sound, and an enthusiastic hosting crew.</p>
+                    </div>
+
+                    <!-- Service 5: Private Gatherings -->
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </div>
+                        <h3 data-i18n="service5_title">Private Gatherings</h3>
+                        <p data-i18n="service5_desc">Tailored meeting lounges, private dining rooms, and executive buffet systems designed for corporate meets, executive dinners, or private family feasts.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- The Restaurant & Kitchen -->
+        <!-- The Restaurant & Cafe -->
         <section class="restaurant-section scroll-reveal" id="restaurant">
             <div class="section-container">
                 <div class="section-header text-center">
@@ -240,8 +304,62 @@
                 </div>
                 
                 <div class="kitchen-spotlight grid-two">
+                    <!-- Interactive Fine Dine Slideshow (Swapped to Left Column) -->
+                    <div class="restaurant-slideshow-wrapper">
+                        <div class="restaurant-slideshow" id="restaurant-slideshow">
+                            <!-- Slide 1 -->
+                            <div class="restaurant-slide active">
+                                <img src="assets/images/run_friends.jpg" alt="Active friendly feast snap at Shri Ram Restaurant">
+                                <div class="slide-caption">
+                                    <h4 data-i18n="restaurant_slide1_title">भव्य पारिवारिक भोज</h4>
+                                    <p data-i18n="restaurant_slide1_desc">हाथीदांत के आरामदायक केबिन में उत्कृष्ट आतिथ्य सत्कार</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Slide 2 -->
+                            <div class="restaurant-slide">
+                                <img src="assets/images/run_wide.jpg" alt="Bustling service and active dining rush at Shri Ram Restaurant">
+                                <div class="slide-caption">
+                                    <h4 data-i18n="restaurant_slide2_title">सजीव भोजन कक्ष</h4>
+                                    <p data-i18n="restaurant_slide2_desc">अखरोट की नक्काशीदार दीवारों के बीच सजीव सेवा</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Slide 3 -->
+                            <div class="restaurant-slide">
+                                <img src="assets/images/run_family.jpg" alt="Traditional multi-generational family dining at Shri Ram Restaurant">
+                                <div class="slide-caption">
+                                    <h4 data-i18n="restaurant_slide3_title">पारिवारिक समारोह</h4>
+                                    <p data-i18n="restaurant_slide3_desc">पीढ़ियों से चला आ रहा आतिथ्य और शुद्ध पारंपरिक स्वाद</p>
+                                </div>
+                            </div>
+
+                            <!-- Slide 4 -->
+                            <div class="restaurant-slide">
+                                <img src="assets/images/kitchen.jpg" alt="Ultra-hygienic stainless steel kitchen space">
+                                <div class="slide-caption">
+                                    <h4 data-i18n="restaurant_slide4_title">स्वच्छ खुली रसोई</h4>
+                                    <p data-i18n="restaurant_slide4_desc">अत्याधुनिक खुली रसोई जहाँ वैदिक स्वच्छता को प्राथमिकता दी जाती है</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slideshow Navigation Controls -->
+                        <button class="slideshow-ctrl prev" id="restaurant-slide-prev" aria-label="Previous Slide">&#10094;</button>
+                        <button class="slideshow-ctrl next" id="restaurant-slide-next" aria-label="Next Slide">&#10095;</button>
+
+                        <!-- Slideshow Pagination Indicators -->
+                        <div class="restaurant-indicators" id="restaurant-slide-indicators">
+                            <span class="indicator active" data-index="0"></span>
+                            <span class="indicator" data-index="1"></span>
+                            <span class="indicator" data-index="2"></span>
+                            <span class="indicator" data-index="3"></span>
+                        </div>
+                    </div>
+
+                    <!-- Spotlight Content (Swapped to Right Column) -->
                     <div class="spotlight-content">
-                        <div class="hygiene-tag" data-i18n="restaurant_tag">वैदिक मानक</div>
+                        <div class="hygiene-tag" data-i18n="restaurant_tag">परम पावन वैदिक शुद्धता</div>
                         <h3 class="spotlight-title" data-i18n="restaurant_spotlight_title">हमारी खुली रसोई: आधुनिक और अति-स्वच्छ</h3>
                         <p class="spotlight-desc" data-i18n="restaurant_spotlight_desc">हमारी रसोई केवल भोजन बनाने का स्थान नहीं है; यह हमारा गौरव है। जैसा कि आप हमारे लाइव कैमरे में देख सकते हैं, हम उच्चतम स्तर के स्टेनलेस स्टील वर्कस्टेशन, उन्नत वेंटिलेशन और निरंतर स्वच्छता दिनचर्या का उपयोग करते हैं। प्रत्येक रसोइया पावन नियमों का पालन करता है ताकि आपका भोजन स्वच्छ, शुद्ध और स्वास्थ्यवर्धक रहे।</p>
                         
@@ -262,67 +380,11 @@
                         
                         <a href="#menu" class="btn btn-secondary" data-i18n="restaurant_btn">व्यंजनों की सूची देखें</a>
                     </div>
-                    
-                    <div class="spotlight-media">
-                        <div class="media-frame">
-                            <img src="assets/images/kitchen.jpg" alt="Our ultra-hygienic stainless steel commercial kitchen in action" class="spotlight-img">
-                            <div class="media-caption" data-i18n="restaurant_live_badge">
-                                <span class="dot-live animate-pulse"></span> सजीव रसोई का दृश्य
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- The Cafe -->
-        <section class="cafe-section scroll-reveal" id="cafe">
-            <div class="section-container grid-two">
-                <div class="cafe-media">
-                    <div class="cafe-decor-grid">
-                        <div class="cafe-image-card">
-                            <div class="cafe-logo-wrapper">
-                                <img src="assets/images/logo.jpg" alt="Shree Ram Mandala Logo" class="cafe-logo-watermark">
-                            </div>
-                            <div class="cafe-overlay-text">
-                                <h3 data-i18n="cafe_overlay_title">द लाउंज</h3>
-                                <p data-i18n="cafe_overlay_subtitle">अरोमा कॉफी और मीठे व्यंजन</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="cafe-info">
-                    <span class="section-subtitle" data-i18n="cafe_subtitle">लकड़ी की आरामदायक नक्काशीदार जगह</span>
-                    <h2 class="section-title" data-i18n="cafe_title">उत्कृष्ट कैफ़े और लाउंज</h2>
-                    <p class="section-desc" data-i18n="cafe_desc">हमारे अखरोट की लकड़ी से बने शांत कैफ़े लाउंज में आएं जहाँ समय धीमा हो जाता है। लटकती हरी-भरी लताओं और आधुनिक लकड़ी के फर्नीचर से सजी यह जगह गहरी बातचीत, शांति से पढ़ने या काम के लिए उत्तम है।</p>
-                    
-                    <div class="cafe-features">
-                        <div class="cafe-feature">
-                            <span class="feat-num">01</span>
-                            <div>
-                                <h4 data-i18n="cafe_feat1_title">उत्कृष्ट कॉफी</h4>
-                                <p data-i18n="cafe_feat1_desc">अनुभवी बरिस्ता द्वारा तैयार की गई ताज़ी कॉफ़ी बीन्स की मनमोहक सुगंध।</p>
-                            </div>
-                        </div>
-                        <div class="cafe-feature">
-                            <span class="feat-num">02</span>
-                            <div>
-                                <h4 data-i18n="cafe_feat2_title">प्रीमियम शेक्स और मॉकटेल्स</h4>
-                                <p data-i18n="cafe_feat2_desc">विशेष रूप से तैयार जड़ी-बूटियों और फूलों के ताज़गी देने वाले मॉकटेल्स।</p>
-                            </div>
-                        </div>
-                        <div class="cafe-feature">
-                            <span class="feat-num">03</span>
-                            <div>
-                                <h4 data-i18n="cafe_feat3_title">घर में बनी ताज़ा पेस्ट्री</h4>
-                                <p data-i18n="cafe_feat3_desc">ताज़े बने क्रोइसैन्ट, अंडे रहित स्वादिष्ट केक और बेकहाउस व्यंजन।</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+
 
         <!-- The Banquet Hall -->
         <section class="banquet-section scroll-reveal" id="banquet">
@@ -531,10 +593,6 @@
                             </div>
                         </div>
                     </div>
-                    
-                </div>
-            </div>
-        </section>
                     
                 </div>
             </div>
@@ -917,6 +975,20 @@
         
         <button class="lightbox-next" id="lightbox-next" aria-label="Next Image">&#10095;</button>
     </div>
+
+    <!-- Floating WhatsApp CTA -->
+    <a href="https://wa.me/919876543210?text=Namaste%20%F0%9F%99%8F%20I%20would%20like%20to%20make%20a%20reservation%20at%20Shri%20Ram%20Hotel%20%26%20Restaurant." target="_blank" rel="noopener noreferrer" class="whatsapp-fab" id="whatsapp-fab" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.5" fill="none">
+            <polyline points="18 15 12 9 6 15"/>
+        </svg>
+    </button>
 
     <!-- Custom vanilla JS -->
     <script src="assets/js/main.js"></script>

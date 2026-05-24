@@ -377,6 +377,73 @@ p {
     background-color: var(--color-ivory-light);
 }
 
+
+/* Nav Weather Pill */
+.nav-weather-item {
+    list-style: none;
+}
+
+.nav-weather-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.85rem;
+    background-color: var(--color-gold-fade);
+    border: 1px solid rgba(197, 168, 128, 0.3);
+    border-radius: 30px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--color-timber-dark);
+    white-space: nowrap;
+    transition: var(--transition-smooth);
+    cursor: default;
+}
+
+.nav-weather-pill .weather-icon-svg {
+    color: var(--color-gold-bright);
+    flex-shrink: 0;
+    animation: spin-slow 20s linear infinite;
+}
+
+.nav-weather-pill .weather-temp {
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--color-timber-dark);
+    font-family: var(--font-body);
+    letter-spacing: 0.02em;
+    transition: var(--transition-smooth);
+}
+
+.nav-weather-pill .weather-city {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-timber-light);
+    opacity: 0.85;
+    border-left: 1px solid rgba(197, 168, 128, 0.4);
+    padding-left: 0.45rem;
+    transition: var(--transition-smooth);
+}
+
+/* Scrolled dark header state */
+.main-header.scrolled .nav-weather-pill {
+    background-color: rgba(252, 251, 247, 0.08);
+    border-color: rgba(252, 251, 247, 0.15);
+}
+
+.main-header.scrolled .nav-weather-pill .weather-temp {
+    color: var(--color-ivory-light);
+}
+
+.main-header.scrolled .nav-weather-pill .weather-city {
+    color: rgba(252, 251, 247, 0.6);
+    border-left-color: rgba(252, 251, 247, 0.2);
+}
+
+.main-header.scrolled .nav-weather-pill .weather-icon-svg {
+    color: var(--color-gold);
+}
+
 /* Sacred Ramayan Chaupai Banner */
 .sacred-banner {
     background-color: var(--color-ivory-medium);
@@ -487,68 +554,138 @@ p {
     gap: 1.5rem;
 }
 
-/* Asymmetrical Image Layout */
-.hero-asymmetrical-cards {
+/* Interactive Premium Slideshow Layout */
+.hero-slideshow-wrapper {
     position: relative;
-    height: 480px;
+    height: 600px; /* Grand stunning height for larger image presentation */
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(44, 26, 23, 0.15);
+    border: 5px solid var(--color-ivory-light);
+}
+
+.hero-slideshow {
+    position: relative;
+    height: 100%;
     width: 100%;
 }
 
-.hero-card {
+.hero-slide {
     position: absolute;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
-    border: 4px solid var(--color-ivory-light);
-    transition: var(--transition-smooth);
-}
-
-.hero-card img {
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
 }
 
-.hero-card:hover img {
-    transform: scale(1.06);
-}
-
-.hero-card.main-card {
-    top: 0;
-    right: 0;
-    width: 80%;
-    height: 380px;
+.hero-slide.active {
+    opacity: 1;
+    pointer-events: auto;
     z-index: 2;
 }
 
-.hero-card.sub-card {
-    bottom: 0;
-    left: 0;
-    width: 60%;
-    height: 260px;
-    z-index: 3;
-    border-color: var(--color-ivory-medium);
+.hero-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.08);
+    transition: transform 7s cubic-bezier(0.1, 0.8, 0.3, 1);
 }
 
-.card-caption {
+.hero-slide.active img {
+    transform: scale(1.01);
+}
+
+.slide-caption {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    background: linear-gradient(to top, rgba(44, 26, 23, 0.85) 0%, transparent 100%);
-    padding: 1.5rem;
+    background: linear-gradient(to top, rgba(44, 26, 23, 0.9) 0%, rgba(44, 26, 23, 0.3) 70%, transparent 100%);
+    padding: 2.5rem 2rem 2rem 2rem;
     color: var(--color-ivory-light);
+    transform: translateY(10px);
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 3;
 }
 
-.card-caption h4 {
-    font-size: 1.15rem;
-    font-weight: 500;
+.hero-slide.active .slide-caption {
+    transform: translateY(0);
 }
 
-.card-caption p {
-    font-size: 0.85rem;
+.slide-caption h4 {
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: var(--color-ivory-light);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.slide-caption p {
+    font-size: 0.9rem;
     color: var(--color-gold);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Slideshow Interactive Toggles */
+.slideshow-ctrl {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: rgba(252, 251, 247, 0.25);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(252, 251, 247, 0.3);
+    color: var(--color-ivory-light);
+    font-size: 1.1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: var(--transition-smooth);
+}
+
+.slideshow-ctrl:hover {
+    background-color: var(--color-timber-dark);
+    border-color: var(--color-timber-dark);
+    color: var(--color-ivory-light);
+    transform: translateY(-50%) scale(1.05);
+}
+
+.slideshow-ctrl.prev { left: 1rem; }
+.slideshow-ctrl.next { right: 1rem; }
+
+/* Pagination Dots */
+.slideshow-indicators {
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.6rem;
+    z-index: 10;
+}
+
+.slideshow-indicators .indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(252, 251, 247, 0.4);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.slideshow-indicators .indicator.active {
+    background-color: var(--color-gold-bright);
+    width: 24px;
+    border-radius: 4px;
 }
 
 /* Scroll Down Indicator */
@@ -584,112 +721,70 @@ p {
     60% { transform: translateY(-5px) translateX(-50%); }
 }
 
-/* 6. Heritage (About Section) */
-.about-section {
+/* 6. Our Services Section (Replacing About Heritage) */
+.services-section {
     background-color: var(--color-ivory-light);
 }
 
-.about-media {
-    position: relative;
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.service-card {
+    background-color: var(--color-ivory-light);
+    border: 1px solid var(--color-gold-fade);
+    border-radius: 8px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 8px 30px rgba(44, 26, 23, 0.03);
+    transition: var(--transition-smooth);
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    gap: 1.25rem;
 }
 
-.about-image-wrapper {
-    position: relative;
-    max-width: 420px;
-    width: 100%;
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(44, 26, 23, 0.08);
+    border-color: var(--color-gold);
 }
 
-.about-img-main {
-    width: 100%;
+.service-icon {
+    width: 56px;
+    height: 56px;
     border-radius: 50%;
-    border: 8px solid var(--color-ivory-medium);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-    background-color: var(--color-ivory-light);
+    background-color: var(--color-ivory-medium);
+    color: var(--color-gold-bright);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-smooth);
+    border: 1px solid var(--color-gold-fade);
 }
 
-.about-badge {
-    position: absolute;
-    bottom: 10%;
-    right: -10%;
+.service-card:hover .service-icon {
     background-color: var(--color-timber-dark);
     color: var(--color-ivory-light);
-    border: 3px solid var(--color-gold);
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 8px 25px rgba(44, 26, 23, 0.2);
-    text-align: center;
-    padding: 0.5rem;
+    transform: rotate(360deg);
 }
 
-.badge-number {
+.service-card h3 {
     font-family: var(--font-heading);
-    font-size: 1.75rem;
-    font-weight: 700;
-    color: var(--color-gold-bright);
-    line-height: 1;
-}
-
-.badge-text {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    font-weight: 500;
-}
-
-.about-info {
-    padding-left: 2rem;
-}
-
-.about-info .section-desc {
-    font-size: 1.1rem;
-    margin-bottom: 2.5rem;
-}
-
-.heritage-pillars {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.pillar {
-    display: flex;
-    gap: 1.5rem;
-    align-items: flex-start;
-}
-
-.pillar-icon {
-    flex-shrink: 0;
-    width: 50px;
-    height: 50px;
-    border-radius: 8px;
-    background-color: var(--color-ivory-medium);
-    border: 1px solid var(--color-gold-fade);
-    color: var(--color-gold-bright);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.pillar-text h3 {
-    font-family: var(--font-body);
-    font-size: 1.15rem;
-    font-weight: 600;
+    font-size: 1.35rem;
     color: var(--color-timber-dark);
-    margin-bottom: 0.4rem;
+    font-weight: 600;
 }
 
-.pillar-text p {
+.service-card p {
     font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    font-weight: 300;
 }
 
-/* 7. Restaurant Section & Open Kitchen */
+/* 7. Restaurant & Cafe Section */
 .restaurant-section {
     background-color: var(--color-ivory-medium);
 }
@@ -751,162 +846,106 @@ p {
     color: var(--color-gold-bright);
 }
 
-.spotlight-media {
+/* Restaurant & Cafe Slideshow Styling */
+.restaurant-slideshow-wrapper {
     position: relative;
-    height: 100%;
+    height: 380px;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(44, 26, 23, 0.1);
+    border: 4px solid var(--color-ivory-light);
 }
 
-.media-frame {
+.restaurant-slideshow {
     position: relative;
     height: 100%;
     width: 100%;
-    min-height: 400px;
-    overflow: hidden;
 }
 
-.spotlight-img {
+.restaurant-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+}
+
+.restaurant-slide.active {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 2;
+}
+
+.restaurant-slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transform: scale(1.08);
+    transition: transform 7s cubic-bezier(0.1, 0.8, 0.3, 1);
 }
 
-.media-caption {
+.restaurant-slide.active img {
+    transform: scale(1.01);
+}
+
+.restaurant-slide .slide-caption {
     position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
-    background-color: rgba(44, 26, 23, 0.85);
-    backdrop-filter: blur(5px);
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(44, 26, 23, 0.9) 0%, rgba(44, 26, 23, 0.3) 70%, transparent 100%);
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
     color: var(--color-ivory-light);
-    font-size: 0.8rem;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    transform: translateY(10px);
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 3;
 }
 
-.dot-live {
-    width: 8px;
-    height: 8px;
-    background-color: #4CAF50;
-    border-radius: 50%;
+.restaurant-slide.active .slide-caption {
+    transform: translateY(0);
 }
 
-.animate-pulse {
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0% { transform: scale(0.9); opacity: 0.5; }
-    50% { transform: scale(1.2); opacity: 1; }
-    100% { transform: scale(0.9); opacity: 0.5; }
-}
-
-/* 8. Cafe Lounge Section */
-.cafe-section {
-    background-color: var(--color-ivory-light);
-}
-
-.cafe-media {
-    position: relative;
-}
-
-.cafe-decor-grid {
-    height: 480px;
-    background-color: var(--color-ivory-medium);
-    border-radius: 8px;
-    overflow: hidden;
-    position: relative;
-    border: 1px solid rgba(197, 168, 128, 0.2);
-}
-
-.cafe-image-card {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-
-.cafe-logo-wrapper {
-    width: 250px;
-    height: 250px;
-    opacity: 0.08;
-    animation: spin 60s linear infinite;
-}
-
-.cafe-logo-watermark {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.cafe-overlay-text {
-    position: absolute;
-    bottom: 3rem;
-    left: 3rem;
-    border-left: 2px solid var(--color-gold);
-    padding-left: 1.5rem;
-}
-
-.cafe-overlay-text h3 {
-    font-size: 1.75rem;
-    color: var(--color-timber-dark);
-}
-
-.cafe-overlay-text p {
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--color-gold-bright);
-}
-
-@keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-.cafe-info {
-    padding-left: 2rem;
-}
-
-.cafe-info .section-desc {
-    font-size: 1.1rem;
-    margin-bottom: 2.5rem;
-}
-
-.cafe-features {
-    display: flex;
-    flex-direction: column;
-    gap: 2.25rem;
-}
-
-.cafe-feature {
-    display: flex;
-    gap: 1.5rem;
-}
-
-.feat-num {
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--color-gold-bright);
-    line-height: 1;
-    border-bottom: 2px solid var(--color-gold);
-    padding-bottom: 0.25rem;
-}
-
-.cafe-feature h4 {
-    font-family: var(--font-body);
+.restaurant-slide .slide-caption h4 {
     font-size: 1.15rem;
     font-weight: 600;
-    color: var(--color-timber-dark);
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.25rem;
+    color: var(--color-ivory-light);
 }
 
-.cafe-feature p {
-    font-size: 0.95rem;
+.restaurant-slide .slide-caption p {
+    font-size: 0.85rem;
+    color: var(--color-gold);
+}
+
+/* Indicators & Controls */
+.restaurant-indicators {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+    z-index: 10;
+}
+
+.restaurant-indicators .indicator {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: rgba(252, 251, 247, 0.4);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.restaurant-indicators .indicator.active {
+    background-color: var(--color-gold-bright);
+    width: 18px;
+    border-radius: 3px;
 }
 
 /* 9. Banquet & Event Hall Section */
@@ -1624,7 +1663,7 @@ p {
 .map-container {
     height: 130px;
     border-radius: 4px;
-    background-color: rgba(44, 26, 23, 0.6);
+    background-color: #121212;
     border: 1px solid rgba(197, 168, 128, 0.15);
     display: flex;
     align-items: center;
@@ -1641,12 +1680,20 @@ p {
     align-items: center;
     gap: 0.5rem;
     color: var(--color-ivory-light);
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    font-weight: 500;
+    letter-spacing: 0.08em;
+    font-weight: 700;
     z-index: 2;
     transition: var(--transition-smooth);
+}
+
+.map-placeholder span {
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.85);
+}
+
+.map-placeholder svg {
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
 }
 
 .map-container::before {
@@ -1656,8 +1703,8 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(135deg, rgba(28, 17, 15, 0.88), rgba(44, 26, 23, 0.65)), 
-                      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='120' viewBox='0 0 200 120'%3E%3Cpath d='M-10,30 L210,30 M-10,80 L210,80 M40,-10 L40,130 M150,-10 L150,130 M-10,10 L80,10 L80,130 M100,-10 L100,50 L210,50 M80,100 L210,100 M-10,55 L35,55 M110,60 L110,130' stroke='rgba%28197, 168, 128, 0.22%29' stroke-width='2.5' fill='none' /%3E%3Cpath d='M-10,-10 L210,130' stroke='rgba%28197, 168, 128, 0.18%29' stroke-width='3.5' fill='none' /%3E%3Ccircle cx='120' cy='60' r='12' stroke='rgba%28197, 168, 128, 0.25%29' stroke-width='1' fill='none' /%3E%3Ccircle cx='120' cy='60' r='24' stroke='rgba%28197, 168, 128, 0.12%29' stroke-width='1' fill='none' /%3E%3C/svg%3E");
+    background-image: linear-gradient(135deg, rgba(15, 15, 15, 0.94), rgba(30, 30, 30, 0.82)), 
+                      url("../images/map.jpg");
     background-size: cover;
     background-position: center;
     z-index: 1;
@@ -1665,8 +1712,8 @@ p {
 }
 
 .map-container:hover::before {
-    background-image: linear-gradient(135deg, rgba(28, 17, 15, 0.8), rgba(44, 26, 23, 0.45)), 
-                      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='120' viewBox='0 0 200 120'%3E%3Cpath d='M-10,30 L210,30 M-10,80 L210,80 M40,-10 L40,130 M150,-10 L150,130 M-10,10 L80,10 L80,130 M100,-10 L100,50 L210,50 M80,100 L210,100 M-10,55 L35,55 M110,60 L110,130' stroke='rgba%28197, 168, 128, 0.35%29' stroke-width='2.5' fill='none' /%3E%3Cpath d='M-10,-10 L210,130' stroke='rgba%28197, 168, 128, 0.28%29' stroke-width='3.5' fill='none' /%3E%3Ccircle cx='120' cy='60' r='12' stroke='rgba%28197, 168, 128, 0.4%29' stroke-width='1.5' fill='none' /%3E%3Ccircle cx='120' cy='60' r='24' stroke='rgba%28197, 168, 128, 0.2%29' stroke-width='1' fill='none' /%3E%3C/svg%3E");
+    background-image: linear-gradient(135deg, rgba(15, 15, 15, 0.86), rgba(30, 30, 30, 0.72)), 
+                      url("../images/map.jpg");
     transform: scale(1.03);
 }
 
@@ -1888,6 +1935,26 @@ p {
     .btn-nav {
         display: none; /* Hide top reservation on small screens, click toggle instead */
     }
+
+    /* Weather pill in mobile nav - show as centered badge at bottom */
+    .nav-weather-item {
+        margin-top: 1rem;
+    }
+
+    .nav-weather-pill {
+        padding: 0.5rem 1.2rem;
+        font-size: 0.85rem;
+        background-color: var(--color-gold-fade);
+    }
+
+    .nav-weather-pill .weather-temp {
+        font-size: 0.95rem;
+    }
+
+    .nav-weather-pill .weather-city {
+        font-size: 0.75rem;
+        display: inline-block; /* Make sure it's visible inside mobile drawer */
+    }
     
     /* Hamburger Animation */
     .mobile-nav-toggle.active .hamburger-bar:nth-child(1) {
@@ -1989,6 +2056,14 @@ p {
         gap: 1.5rem;
         text-align: center;
     }
+    .hero-slideshow-wrapper {
+        height: 360px; /* Snugger height on tablets */
+        margin-top: 2rem;
+    }
+    .restaurant-slideshow-wrapper {
+        height: 300px; /* Snugger height on tablets */
+        margin-top: 1.5rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -2007,6 +2082,12 @@ p {
     
     .gallery-card {
         height: 240px;
+    }
+    .hero-slideshow-wrapper {
+        height: 280px; /* Compact height on phones */
+    }
+    .restaurant-slideshow-wrapper {
+        height: 240px; /* Compact height on phones */
     }
 }
 
@@ -2115,5 +2196,241 @@ p {
         background-color: rgba(252, 251, 247, 0.1);
         border-color: rgba(252, 251, 247, 0.2);
         color: var(--color-ivory-light);
+    }
+}
+
+/* ==========================================================================
+   18. Floating WhatsApp CTA Button
+   ========================================================================== */
+.whatsapp-fab {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    z-index: 1500;
+    transition: var(--transition-smooth);
+    animation: whatsappPulse 3s ease-in-out infinite;
+}
+
+.whatsapp-fab:hover {
+    transform: scale(1.12) translateY(-3px);
+    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.55);
+    color: #fff;
+}
+
+@keyframes whatsappPulse {
+    0%, 100% { box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4); }
+    50% { box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4), 0 0 0 12px rgba(37, 211, 102, 0.08); }
+}
+
+/* ==========================================================================
+   19. Back to Top Button
+   ========================================================================== */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: var(--color-timber-dark);
+    color: var(--color-ivory-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 18px rgba(44, 26, 23, 0.25);
+    z-index: 1500;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: var(--transition-smooth);
+    border: 2px solid rgba(197, 168, 128, 0.3);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background-color: var(--color-gold-bright);
+    color: var(--color-timber-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+}
+
+/* ==========================================================================
+   20. Enhanced Mobile Responsiveness
+   ========================================================================== */
+
+/* Services grid: 2 columns on tablet, 1 on phone */
+@media (max-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .service-card {
+        padding: 2rem 1.5rem;
+    }
+
+    /* Gallery filter buttons wrap nicely */
+    .gallery-filters {
+        flex-wrap: wrap;
+        gap: 0.6rem;
+    }
+
+    .gallery-filter-btn {
+        padding: 0.5rem 1.1rem;
+        font-size: 0.82rem;
+    }
+
+    /* Menu tabs scrollable horizontally */
+    .menu-tabs-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        justify-content: flex-start;
+        padding: 0 0.5rem;
+        scrollbar-width: none;
+    }
+
+    .menu-tabs-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    .menu-tabs {
+        flex-shrink: 0;
+        white-space: nowrap;
+    }
+
+    /* Banquet amenities grid */
+    .banquet-amenities.grid-two {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+
+    /* Banquet media height */
+    .banquet-media .media-frame {
+        height: 300px;
+    }
+
+    /* WhatsApp & back-to-top mobile positioning */
+    .whatsapp-fab {
+        width: 52px;
+        height: 52px;
+        bottom: 1.25rem;
+        left: 1.25rem;
+    }
+
+    .back-to-top {
+        width: 42px;
+        height: 42px;
+        bottom: 1.25rem;
+        right: 1.25rem;
+    }
+
+    /* Testimonial slider mobile */
+    .quote-text {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Hero section mobile */
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-desc {
+        font-size: 1rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.82rem;
+        letter-spacing: 0.15em;
+    }
+
+    .hero-btns {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .hero-btns .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Banquet amenities single column on small phone */
+    .banquet-amenities.grid-two {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    /* Smaller section padding */
+    .section-container {
+        padding: 2.5rem 1rem;
+    }
+
+    .section-header .section-lead {
+        font-size: 0.95rem;
+    }
+
+    /* Contact pills stack better */
+    .contact-pill {
+        padding: 1rem 1.25rem;
+        gap: 1rem;
+    }
+
+    .contact-pill strong {
+        font-size: 1rem;
+    }
+
+    /* Slide captions smaller on phone */
+    .slide-caption h4 {
+        font-size: 1.1rem;
+    }
+
+    .slide-caption p {
+        font-size: 0.8rem;
+    }
+
+    /* Footer improvements */
+    .hours-list li {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .footer-address {
+        font-size: 0.85rem;
+    }
+
+    /* Testimonial slider */
+    .slider-container {
+        height: 420px;
+    }
+
+    .quote-text {
+        font-size: 1rem;
+    }
+
+    .quote-icon {
+        font-size: 3.5rem;
+        height: 40px;
     }
 }
