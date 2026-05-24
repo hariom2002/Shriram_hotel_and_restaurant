@@ -557,7 +557,7 @@ p {
 /* Interactive Premium Slideshow Layout */
 .hero-slideshow-wrapper {
     position: relative;
-    height: 600px; /* Grand stunning height for larger image presentation */
+    height: 720px; /* Majestic grand height for larger image presentation */
     width: 100%;
     border-radius: 12px;
     overflow: hidden;
@@ -849,7 +849,7 @@ p {
 /* Restaurant & Cafe Slideshow Styling */
 .restaurant-slideshow-wrapper {
     position: relative;
-    height: 380px;
+    height: 500px; /* Glistening tall height for a beautiful display */
     width: 100%;
     border-radius: 8px;
     overflow: hidden;
@@ -1212,6 +1212,136 @@ p {
 
 .gallery-card:hover .gallery-overlay {
     opacity: 1;
+}
+
+/* Gallery Category Cover Cards (Large Cardboard style) */
+.gallery-category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    margin-top: 1rem;
+}
+
+.category-card {
+    position: relative;
+    height: 480px; /* Large grand cover presentation */
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 20px 45px rgba(44, 26, 23, 0.12);
+    border: 6px solid var(--color-ivory-light);
+    transition: var(--transition-smooth);
+}
+
+.category-card-image {
+    width: 100%;
+    height: 100%;
+    transition: var(--transition-smooth);
+}
+
+.category-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.category-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(28, 17, 15, 0.95) 0%, rgba(44, 26, 23, 0.4) 60%, transparent 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: 2.5rem;
+    color: var(--color-ivory-light);
+    transition: var(--transition-smooth);
+}
+
+.category-card-info {
+    width: 100%;
+}
+
+.category-count {
+    display: inline-block;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-gold-bright);
+    background-color: rgba(197, 168, 128, 0.15);
+    border: 1px solid var(--color-gold-fade);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    margin-bottom: 0.85rem;
+}
+
+.category-title {
+    font-family: var(--font-heading);
+    font-size: 1.85rem;
+    font-weight: 600;
+    color: var(--color-ivory-light);
+    margin-bottom: 0.6rem;
+    transition: var(--transition-smooth);
+}
+
+.category-desc {
+    font-size: 0.9rem;
+    color: rgba(252, 251, 247, 0.75);
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    transform: translateY(15px);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.category-action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-gold-bright);
+    border-bottom: 1.5px solid transparent;
+    padding-bottom: 0.15rem;
+    transition: var(--transition-smooth);
+}
+
+.category-action-btn svg {
+    transition: transform 0.3s ease;
+}
+
+/* Hover effects */
+.category-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 60px rgba(44, 26, 23, 0.2);
+    border-color: var(--color-gold-fade);
+}
+
+.category-card:hover .category-card-image img {
+    transform: scale(1.08);
+}
+
+.category-card:hover .category-card-overlay {
+    background: linear-gradient(to top, rgba(28, 17, 15, 0.98) 0%, rgba(44, 26, 23, 0.55) 50%, transparent 100%);
+}
+
+.category-card:hover .category-desc {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.category-card:hover .category-title {
+    color: var(--color-gold);
+}
+
+.category-card:hover .category-action-btn {
+    border-color: var(--color-gold-bright);
+}
+
+.category-card:hover .category-action-btn svg {
+    transform: translateX(5px);
 }
 
 /* 12. Reserve Section & Interactive Booking Form */
@@ -2057,12 +2187,16 @@ p {
         text-align: center;
     }
     .hero-slideshow-wrapper {
-        height: 360px; /* Snugger height on tablets */
+        height: 480px; /* Snugger height on tablets */
         margin-top: 2rem;
     }
     .restaurant-slideshow-wrapper {
-        height: 300px; /* Snugger height on tablets */
+        height: 400px; /* Snugger height on tablets */
         margin-top: 1.5rem;
+    }
+    .gallery-category-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
     }
 }
 
@@ -2084,10 +2218,17 @@ p {
         height: 240px;
     }
     .hero-slideshow-wrapper {
-        height: 280px; /* Compact height on phones */
+        height: 360px; /* Compact height on phones */
     }
     .restaurant-slideshow-wrapper {
-        height: 240px; /* Compact height on phones */
+        height: 300px; /* Compact height on phones */
+    }
+    .gallery-category-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .category-card {
+        height: 380px;
     }
 }
 

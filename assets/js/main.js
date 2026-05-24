@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
             form_lbl_name: "पूरा नाम",
             form_placeholder_name: "उदा., अर्जुन शर्मा",
             form_lbl_phone: "फ़ोन नंबर",
-            form_placeholder_phone: "उदा., +91-98765-43210",
+            form_placeholder_phone: "उदा., +91-94251-49163",
             form_lbl_email: "ईमेल पता",
             form_placeholder_email: "उदा., arjun@gmail.com",
             form_lbl_date: "पसंदीदा तारीख",
@@ -175,6 +175,15 @@ document.addEventListener('DOMContentLoaded', () => {
             form_lbl_event: "आयोजन की श्रेणी",
             form_lbl_notes: "विशेष आवश्यकताएं / सुझाव",
             form_placeholder_notes: "उदा., व्हीलचेयर की सुविधा, बच्चों के लिए विशेष कुर्सी, या भव्य मंच सजावट...",
+            form_opt_guests_2: "2 व्यक्ति",
+            form_opt_guests_4: "4 व्यक्ति",
+            form_opt_guests_6: "6 व्यक्ति",
+            form_opt_guests_8: "8+ व्यक्ति",
+            form_opt_event_wedding: "स्वप्निल विवाह",
+            form_opt_event_reception: "सगाई / रिसेप्शन",
+            form_opt_event_corporate: "कॉर्पोरेट सम्मेलन",
+            form_opt_event_party: "जन्मदिन / सालगिरह",
+            form_opt_event_catering: "विशेष कैटरिंग पूछताछ",
             form_btn_submit: "तालिका आरक्षित करें",
             form_err_name: "कृपया अपना पूरा नाम लिखें",
             form_err_phone: "कृपया वैध १० अंकों का नंबर लिखें",
@@ -183,7 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
             form_err_time: "कृपया समय का चयन करें",
             
             success_title: "आरक्षण की पूछताछ प्राप्त हुई!",
-            success_desc: "धन्यवाद <strong id=\"success-name\">अर्जुन</strong>। हमारे लक्जरी प्रबंधक <span id=\"success-date\">25 मई, 2026</span> को <span id=\"success-time\">19:30</span> बजे के आपके आरक्षण का विवरण समीक्षा करके आपसे <strong id=\"success-phone\">+91-98765-43210</strong> पर 15 मिनट में पुष्टि के लिए संपर्क करेंगे।",
+            success_desc: "धन्यवाद <strong id=\"success-name\">अर्जुन</strong>। हमारे लक्जरी प्रबंधक <span id=\"success-date\">25 मई, 2026</span> को <span id=\"success-time\">19:30</span> बजे के आपके आरक्षण का विवरण समीक्षा करके आपसे <strong id=\"success-phone\">+91-94251-49163</strong> पर 15 मिनट में पुष्टि के लिए संपर्क करेंगे।",
             success_reset_btn: "दूसरा अनुरोध करें",
             
             test_subtitle: "अतिथियों के अनुभव",
@@ -372,7 +381,7 @@ document.addEventListener('DOMContentLoaded', () => {
             form_lbl_name: "Full Name",
             form_placeholder_name: "E.g., Arjun Sharma",
             form_lbl_phone: "Phone Number",
-            form_placeholder_phone: "E.g., +91-98765-43210",
+            form_placeholder_phone: "E.g., +91-94251-49163",
             form_lbl_email: "Email Address",
             form_placeholder_email: "E.g., arjun@gmail.com",
             form_lbl_date: "Preferred Date",
@@ -381,6 +390,15 @@ document.addEventListener('DOMContentLoaded', () => {
             form_lbl_event: "Event Category",
             form_lbl_notes: "Special Requirements / Notes",
             form_placeholder_notes: "E.g., Wheelchair accessibility, high-chair for baby, or custom floral banquet theme...",
+            form_opt_guests_2: "2 Persons",
+            form_opt_guests_4: "4 Persons",
+            form_opt_guests_6: "6 Persons",
+            form_opt_guests_8: "8+ Persons",
+            form_opt_event_wedding: "Dream Wedding",
+            form_opt_event_reception: "Engagement / Reception",
+            form_opt_event_corporate: "Corporate Conference",
+            form_opt_event_party: "Birthday / Anniversary",
+            form_opt_event_catering: "Special Catering Inquiry",
             form_btn_submit: "Confirm Table Reservation",
             form_err_name: "Please enter your full name",
             form_err_phone: "Please enter a valid 10-digit number",
@@ -389,7 +407,7 @@ document.addEventListener('DOMContentLoaded', () => {
             form_err_time: "Please select a time",
             
             success_title: "Reservation Request Received!",
-            success_desc: "Thank you <strong id=\"success-name\">Arjun</strong>. Our luxury experience managers will review details for <span id=\"success-date\">May 25, 2026</span> at <span id=\"success-time\">19:30</span> and call you at <strong id=\"success-phone\">+91-98765-43210</strong> to confirm within 15 minutes.",
+            success_desc: "Thank you <strong id=\"success-name\">Arjun</strong>. Our luxury experience managers will review details for <span id=\"success-date\">May 25, 2026</span> at <span id=\"success-time\">19:30</span> and call you at <strong id=\"success-phone\">+91-94251-49163</strong> to confirm within 15 minutes.",
             success_reset_btn: "Make Another Request",
             
             test_subtitle: "Guest Diaries",
@@ -738,6 +756,33 @@ document.addEventListener('DOMContentLoaded', () => {
             if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
                 openLightbox(card);
+            }
+        });
+    });
+
+    // Category Cards click handlers (to trigger the lightbox with category-filtered images)
+    const categoryCards = document.querySelectorAll('.category-card');
+    categoryCards.forEach(catCard => {
+        catCard.addEventListener('click', () => {
+            const category = catCard.getAttribute('data-category');
+            
+            // Programmatically click the corresponding filter button to update activeImages
+            const filterBtn = document.querySelector(`.gallery-filter-btn[data-filter="${category}"]`);
+            if (filterBtn) {
+                filterBtn.click();
+            }
+            
+            // Find the first gallery card in this category and trigger lightbox
+            const firstCard = document.querySelector(`.gallery-card[data-category="${category}"]`);
+            if (firstCard) {
+                openLightbox(firstCard);
+            }
+        });
+        
+        catCard.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                catCard.click();
             }
         });
     });
